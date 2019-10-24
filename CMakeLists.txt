@@ -6,7 +6,7 @@ set(CMAKE_C_STANDARD 99)
 # Generate the Kbuild file through cmake.
 set( DRIVER_FILE hello.ko )
 set( KERNEL_DIR "/lib/modules/${CMAKE_SYSTEM_VERSION}/build" )
-set( KBUILD_CMD ${CMAKE_MAKE_PROGRAM} -C ${KERNEL_DIR} modules M=${CMAKE_CURRENT_SOURCE_DIR})
+set( KBUILD_CMD ${CMAKE_MAKE_PROGRAM} -C ${KERNEL_DIR} modules M=${CMAKE_CURRENT_BINARY_DIR} src=${CMAKE_CURRENT_SOURCE_DIR})
 
 add_custom_command( OUTPUT ${DRIVER_FILE}
                     COMMAND ${KBUILD_CMD}
