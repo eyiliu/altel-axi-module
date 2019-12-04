@@ -1,4 +1,5 @@
 A simple hello world kernel module, that can be build with cmake.
+Utilize Kbuild through cmake, and do it in a build directory.
 
 
 Usage:
@@ -13,7 +14,7 @@ Usage:
 Expected behavior: 
 
 cmake ../ shall do:
-
+```
 $ cmake ../
 -- The C compiler identification is GNU 9.2.1
 -- Check for working C compiler: /usr/lib64/ccache/cc
@@ -27,12 +28,14 @@ $ cmake ../
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/ca/Code/cmake-kernel-module/build
-
+```
 make shall do:
+```
+make
 Scanning dependencies of target driver
 [100%] Generating hello.ko
 [100%] Built target driver
-
+```
 
 Among others the hello.ko is now present. 
 
