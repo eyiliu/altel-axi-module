@@ -10,7 +10,7 @@ find_package(KernelHeaders REQUIRED)
 include_directories(${KERNELHEADERS_INCLUDE_DIRS})
 
 set(DRIVER_FILE hello.ko)
-set(KBUILD_CMD ${CMAKE_MAKE_PROGRAM} -C ${KERNELHEADERS_DIR} modules M=${CMAKE_CURRENT_BINARY_DIR} src=${CMAKE_CURRENT_SOURCE_DIR})
+set(KBUILD_CMD $(MAKE) -C ${KERNELHEADERS_DIR} modules M=${CMAKE_CURRENT_BINARY_DIR} src=${CMAKE_CURRENT_SOURCE_DIR})
 
 # Generate the Kbuild file through cmake.
 FILE(WRITE ${CMAKE_CURRENT_SOURCE_DIR}/Kbuild "obj-m := hello.o")
