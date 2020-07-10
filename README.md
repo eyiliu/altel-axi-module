@@ -36,8 +36,20 @@ Scanning dependencies of target driver
 [100%] Generating hello.ko
 [100%] Built target driver
 ```
-
 Among others the hello.ko is now present. 
 
 
-Thoughts and comments are welcome. 
+load module:
+```
+insmod hello.ko
+```
+
+rm module:
+```
+rmmod hello.ko
+```
+
+check kernel messages:
+```
+journalctl -r -k
+```
